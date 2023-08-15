@@ -7,7 +7,7 @@
 	"item": [
 		{
 			"name": "Ping",
-			"_postman_id": "09c5b021-0f0d-4ced-9fe8-097cd44c6067",
+			"id": "09c5b021-0f0d-4ced-9fe8-097cd44c6067",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -20,7 +20,7 @@
 		},
 		{
 			"name": "Auth",
-			"_postman_id": "77c44e18-1be7-45f8-ae7e-75f8f64140eb",
+			"id": "77c44e18-1be7-45f8-ae7e-75f8f64140eb",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -34,8 +34,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"password123\"\n}",
-					"options": {}
+					"raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"password123\"\n}"
 				},
 				"url": "{{rb_url}}/auth"
 			},
@@ -43,7 +42,7 @@
 		},
 		{
 			"name": "Get All Bookings",
-			"_postman_id": "f14b74ba-2441-44e3-aff2-dc3a1768f132",
+			"id": "f14b74ba-2441-44e3-aff2-dc3a1768f132",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -56,7 +55,7 @@
 		},
 		{
 			"name": "Get Booking By Name",
-			"_postman_id": "ff09bc2b-56d8-4cd5-bbf5-2cd3b6b23b11",
+			"id": "ff09bc2b-56d8-4cd5-bbf5-2cd3b6b23b11",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -64,7 +63,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{rb_url}}/booking?firstname=sally&lastnam=brown",
+					"raw": "{{rb_url}}/booking?firstname=sally&lastname=jones",
 					"host": [
 						"{{rb_url}}"
 					],
@@ -77,8 +76,8 @@
 							"value": "sally"
 						},
 						{
-							"key": "lastnam",
-							"value": "brown"
+							"key": "lastname",
+							"value": "jones"
 						}
 					]
 				}
@@ -87,7 +86,7 @@
 		},
 		{
 			"name": "Get Bookings By Date",
-			"_postman_id": "a606e74a-f2f2-4ba9-b2bd-fbd789c03053",
+			"id": "a606e74a-f2f2-4ba9-b2bd-fbd789c03053",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -118,7 +117,7 @@
 		},
 		{
 			"name": "Get Booking By ID",
-			"_postman_id": "aa5b31ca-1eb0-442e-b81c-362ec2b14bdb",
+			"id": "aa5b31ca-1eb0-442e-b81c-362ec2b14bdb",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -131,7 +130,7 @@
 		},
 		{
 			"name": "Create Booking",
-			"_postman_id": "fff03c8d-5036-497d-b605-02b762335cd1",
+			"id": "fff03c8d-5036-497d-b605-02b762335cd1",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -145,8 +144,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstname\" : \"Jim\",\n    \"lastname\" : \"Brown\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2018-01-01\",\n        \"checkout\" : \"2019-01-01\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}",
-					"options": {}
+					"raw": "{\n    \"firstname\" : \"Jim\",\n    \"lastname\" : \"Brown\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2018-01-01\",\n        \"checkout\" : \"2019-01-01\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
 				},
 				"url": "{{rb_url}}/booking"
 			},
@@ -154,7 +152,7 @@
 		},
 		{
 			"name": "Update Booking",
-			"_postman_id": "434903c6-6a85-4358-a02c-605ddb8d562e",
+			"id": "434903c6-6a85-4358-a02c-605ddb8d562e",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -176,8 +174,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstname\" : \"James\",\n    \"lastname\" : \"Brown\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2018-01-01\",\n        \"checkout\" : \"2019-01-01\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}",
-					"options": {}
+					"raw": "{\n    \"firstname\" : \"James\",\n    \"lastname\" : \"Brown\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2018-01-01\",\n        \"checkout\" : \"2019-01-01\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
 				},
 				"url": "{{rb_url}}/booking/1"
 			},
@@ -185,7 +182,7 @@
 		},
 		{
 			"name": "Partial Update Booking",
-			"_postman_id": "9fc2719a-6973-4141-adea-5ea6a2d2125f",
+			"id": "9fc2719a-6973-4141-adea-5ea6a2d2125f",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -207,8 +204,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstname\" : \"James\",\n    \"lastname\" : \"Brown\"\n}",
-					"options": {}
+					"raw": "{\n    \"firstname\" : \"James\",\n    \"lastname\" : \"Brown\"\n}"
 				},
 				"url": "{{rb_url}}/booking/1"
 			},
@@ -216,7 +212,7 @@
 		},
 		{
 			"name": "Delete Booking",
-			"_postman_id": "d855a89e-61d9-461d-ae1d-6acc7071947e",
+			"id": "d855a89e-61d9-461d-ae1d-6acc7071947e",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
