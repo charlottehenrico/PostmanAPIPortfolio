@@ -7,6 +7,20 @@
 	"item": [
 		{
 			"name": "Ping",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f9bdbb1a-855e-477f-9753-6647e7381bff",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "09c5b021-0f0d-4ced-9fe8-097cd44c6067",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -20,6 +34,23 @@
 		},
 		{
 			"name": "Auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8805dec5-985b-48f3-98ef-e78dee06d18f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body contains token\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"token\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "77c44e18-1be7-45f8-ae7e-75f8f64140eb",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -42,6 +73,32 @@
 		},
 		{
 			"name": "Get All Bookings",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "31738236-76ea-41cc-997f-c1e27a3b6b29",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Body contains text bookingid\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"bookingid\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Body contains booking id numbers\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.bookingid).to.not.be.null;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "f14b74ba-2441-44e3-aff2-dc3a1768f132",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -54,7 +111,21 @@
 			"response": []
 		},
 		{
-			"name": "Get Booking By Name",
+			"name": "Get Booking By Name_firstnameParameter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "54a5e16c-7956-4253-b344-27e7ad099909",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "ff09bc2b-56d8-4cd5-bbf5-2cd3b6b23b11",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -63,7 +134,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{rb_url}}/booking?firstname=sally&lastname=jones",
+					"raw": "{{rb_url}}/booking?firstname={{firstname}}",
 					"host": [
 						"{{rb_url}}"
 					],
@@ -73,11 +144,48 @@
 					"query": [
 						{
 							"key": "firstname",
-							"value": "sally"
-						},
+							"value": "{{firstname}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Booking By Name_lastnameParameter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "54a5e16c-7956-4253-b344-27e7ad099909",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "74f2f1ca-53dd-4d8a-899e-3abb7cfa3ebe",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{rb_url}}/booking?lastname=brown",
+					"host": [
+						"{{rb_url}}"
+					],
+					"path": [
+						"booking"
+					],
+					"query": [
 						{
 							"key": "lastname",
-							"value": "jones"
+							"value": "brown"
 						}
 					]
 				}
@@ -86,6 +194,20 @@
 		},
 		{
 			"name": "Get Bookings By Date Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e00f012a-9a85-403a-a002-e52dbb5a6f8f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "a606e74a-f2f2-4ba9-b2bd-fbd789c03053",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -117,6 +239,23 @@
 		},
 		{
 			"name": "Get Booking By ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b8df4420-fe2b-4e23-8067-b9d310cdc48e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Surname matches expected string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Jackson\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "aa5b31ca-1eb0-442e-b81c-362ec2b14bdb",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -130,11 +269,42 @@
 		},
 		{
 			"name": "Create Booking",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9dad725a-f47a-452b-8b3c-1b5b797c9580",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"var fn = pm.variables.get(\"firstname\");\r",
+							"var ln = pm.variables.get(\"lastname\");\r",
+							"\r",
+							"pm.test(\"Check first name\" + fn, function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.booking.firstname).to.eql(fn);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check last name\" + ln, function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.booking.lastname).to.eql(ln);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "fff03c8d-5036-497d-b605-02b762335cd1",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -144,7 +314,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstname\" : \"Jim\",\n    \"lastname\" : \"Brown\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2018-01-01\",\n        \"checkout\" : \"2019-01-01\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
+					"raw": "{\n    \"firstname\" : \"{{firstname}}\",\n    \"lastname\" :\"{{lastname}}\",\n    \"totalprice\" : 560,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2023-10-10\",\n        \"checkout\" : \"2023-18-10\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
 				},
 				"url": "{{rb_url}}/booking"
 			},
@@ -232,5 +402,12 @@
 			},
 			"response": []
 		}
-	]
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "password123",
+			"username": "admin"
+		}
+	}
 }
