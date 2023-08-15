@@ -85,7 +85,7 @@
 			"response": []
 		},
 		{
-			"name": "Get Bookings By Date",
+			"name": "Get Bookings By Date Test",
 			"id": "a606e74a-f2f2-4ba9-b2bd-fbd789c03053",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
