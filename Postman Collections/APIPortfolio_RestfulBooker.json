@@ -94,7 +94,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{rb_url}}/booking?checkin=2014-03-13&checkout=2014-05-21",
+					"raw": "{{rb_url}}/booking?checkin=2014-03-15&checkout=2014-05-21",
 					"host": [
 						"{{rb_url}}"
 					],
@@ -104,7 +104,7 @@
 					"query": [
 						{
 							"key": "checkin",
-							"value": "2014-03-13"
+							"value": "2014-03-15"
 						},
 						{
 							"key": "checkout",
