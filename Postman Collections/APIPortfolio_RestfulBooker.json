@@ -279,7 +279,6 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"\r",
 							"var fn = pm.variables.get(\"firstname\");\r",
 							"var ln = pm.variables.get(\"lastname\");\r",
 							"\r",
@@ -314,7 +313,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstname\" : \"{{firstname}}\",\n    \"lastname\" :\"{{lastname}}\",\n    \"totalprice\" : 560,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2023-10-10\",\n        \"checkout\" : \"2023-18-10\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
+					"raw": "{\n    \"firstname\" : \"{{firstname}}\",\n    \"lastname\" :\"{{lastname}}\",\n    \"totalprice\" : {{totalprice}},\n    \"depositpaid\" : {{depositpaid}},\n    \"bookingdates\" : {\n        \"checkin\" : \"{{checkin}}\",\n        \"checkout\" : \"{{checkout}}\"\n    },\n    \"additionalneeds\" : \"{{additionalneeds}}\"\n}"
 				},
 				"url": "{{rb_url}}/booking"
 			},
