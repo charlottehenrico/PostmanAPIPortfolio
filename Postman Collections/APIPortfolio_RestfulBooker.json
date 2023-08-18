@@ -383,6 +383,60 @@
 		},
 		{
 			"name": "Delete Booking",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a017904d-f5b1-4443-bf47-8a3a803c13b3",
+						"exec": [
+							"// create the base booking prior to a delete\r",
+							"const createBooking = {\r",
+							"    url: pm.environment.get(\"rb_url\") + \\\"/booking\\\",\r",
+							"\r",
+							"});\r",
+							"    method: 'POST',\r",
+							"    header: 'Content-Type:application/json',\r",
+							"    body: {\r",
+							"    mode: 'raw',\r",
+							"        raw: JSON.stringify(pm.variables.get(\\\"new_booking\\\"))\r",
+							"    }\r",
+							"};\r",
+							"\r",
+							"const createBooking = {\r",
+							"  url: pm.environment.get('https://postman-echo.com/post',\r",
+							"  method: 'POST',\r",
+							"  header: {\r",
+							"    'Content-Type': 'application/json',\r",
+							"    'X-Foo': 'bar'\r",
+							"  },\r",
+							"  body: {\r",
+							"    mode: 'raw',\r",
+							"    raw: JSON.stringify({ key: 'this is json' })\r",
+							"  }\r",
+							"};\r",
+							"}\r",
+							"\r",
+							"pm.sendRequest(createBooking), function (err, response) {\r",
+							"pm.expect(err).is.null;\r",
+							"pm.variables.set( \"booking_id\", res.json().bookingid);\r",
+							"console.log(response.json())};"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6b5d5b4b-5434-4910-90bd-5697b3ad388c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "d855a89e-61d9-461d-ae1d-6acc7071947e",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
