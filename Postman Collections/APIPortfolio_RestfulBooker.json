@@ -409,5 +409,62 @@
 			"password": "password123",
 			"username": "admin"
 		}
-	}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0bf7f83b-57f7-4aec-8f5f-8625ee93cfa0",
+				"type": "text/javascript",
+				"exec": [
+					"var firstNames=[\"Astrid\",\"Bryce\",\"Celia\", \"Danny\",\"Eric\", \"Freya\", \"Greg\", \"Helga\", \"Indy\", \"Josh\", \"Kaylin\"];",
+					"var lastNames =[\"Anderson\",\"Brooks\", \"Cramer\", \"Dorfling\", \"Els\", \"Fickard\", \"Groove\", \"Holden\", \"Ingels\", \"Joubert\", \"Kleinz\"];",
+					"",
+					"//randomly select names and add to collection variables",
+					"//random function comes from lodash module(_.)",
+					"pm.variables.set(\"firstname\",firstNames[_.random(firstNames.length-1)]);",
+					"pm.variables.set(\"lastname\",lastNames[_.random(lastNames.length - 1)]);",
+					"",
+					"//randomly set price and boolean for deposit paid",
+					"pm.variables.set(\"totalprice\", _.random(50,1500));",
+					"pm.variables.set(\"depositpaid\", (_.random(1) === 1));",
+					"",
+					"//use the moment module with dates and date formatting",
+					"const moment= require(\"moment\");",
+					"var checkin = moment().add( \"days\", _.random(1, 180));",
+					"pm.variables.set(\"checkin\", checkin.format(\"YYYY-MM-DD\"));",
+					"",
+					"var checkout = moment().add( \"days\", _.random(1, 14));",
+					"pm.variables.set(\"checkout\", checkout.format(\"YYYY-MM-DD\"));",
+					"",
+					"var needs = [\"breakfast\", \"lunch \", \"late checkin\", \"early checkout\", null];",
+					"pm.variables.set(\"additionalneeds\",needs[_.random(needs.length - 1)]);",
+					"",
+					"//create a booking object to put all your variables into, save as new variable",
+					"var booking = {",
+					"\t\"firstname\" : pm.variables.get(\"firstname\"),",
+					"\t\"lastname\" : pm.variables.get(\"lastname\"),",
+					"\t\"totalprice\" : pm.variables.get(\"totalprice\"),",
+					"\t\"depositpaid\" : pm.variables.get(\"depositpaid\"),",
+					"\t\"bookingdates\" : {",
+					"\"checkin\" : pm.variables.get(\"checkin\"),",
+					"\"checkout\" : pm.variables.get(\"checkout\")",
+					"},",
+					"\t\"additionalneeds\" : pm.variables.get(\"additionalneeds\")",
+					"}",
+					"pm.variables.set(\"new_booking\", booking)"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "11b6cc04-e287-4d1c-98a1-93de1fe70160",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
 }
