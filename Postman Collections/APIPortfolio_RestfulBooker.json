@@ -450,7 +450,7 @@
 						"value": "token=abc123"
 					}
 				],
-				"url": "{{rb_url}}/booking/1"
+				"url": "{{rb_url}}/booking/{{bookingid}}"
 			},
 			"response": []
 		}
