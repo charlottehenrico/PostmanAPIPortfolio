@@ -405,7 +405,8 @@
 							"pm.sendRequest(createBooking), function (err, response) {\r",
 							"pm.expect(err).is.null;\r",
 							"pm.variables.set( \"booking_id\", res.json().bookingid);\r",
-							"console.log(response.json())};"
+							"//\r",
+							"};"
 						],
 						"type": "text/javascript"
 					}
