@@ -132,7 +132,9 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
-							"});"
+							"});\r",
+							"\r",
+							"//write test here to verify that the booking id that was created during the prerequest script ipresent"
 						],
 						"type": "text/javascript"
 					}
