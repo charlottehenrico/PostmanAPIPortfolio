@@ -13,8 +13,8 @@
 					"script": {
 						"id": "f9bdbb1a-855e-477f-9753-6647e7381bff",
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
+							"pm.test(\"Ping is successful\", function () {\r",
+							"    pm.response.to.be.success;\r",
 							"});"
 						],
 						"type": "text/javascript"
