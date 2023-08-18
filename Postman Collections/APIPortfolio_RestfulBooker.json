@@ -419,7 +419,7 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.sendRequest(pm.environment.get('rb_url') + '/booking' + pm.variables.get('booking_id')),\r",
+							"pm.sendRequest(pm.environment.get('rb_url') + '/booking/' + pm.variables.get('booking_id')),\r",
 							"    function (err, res) {\r",
 							"        if (err) { \r",
 							"            console.log(err); \r",
