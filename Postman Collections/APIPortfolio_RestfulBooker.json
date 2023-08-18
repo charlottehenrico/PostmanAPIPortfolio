@@ -405,7 +405,6 @@
 							"  url: pm.environment.get(\"rb_url\") + \"/booking\",\r",
 							"  method: \"POST\",\r",
 							"  header: \"Content-Type: application/json\",\r",
-							"    \r",
 							"  body: {\r",
 							"    mode: \"raw\",\r",
 							"    raw: JSON.stringify(pm.variables.get(\"new_booking\"))\r",
