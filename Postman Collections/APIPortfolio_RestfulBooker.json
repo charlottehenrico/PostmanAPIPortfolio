@@ -43,8 +43,10 @@
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"pm.test(\"Body contains token\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"token\");\r",
+							"\r",
+							"pm.test(\"Response contains token\", function () {\r",
+							"\tvar jsonData = pm.response.json();\r",
+							"\tpm.expect(jsonData).to.have.property(\"token\");\r",
 							"});"
 						],
 						"type": "text/javascript"
