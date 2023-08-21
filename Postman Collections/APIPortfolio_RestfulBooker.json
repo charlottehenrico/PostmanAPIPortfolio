@@ -179,7 +179,7 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"pm.test(\"Surname matches expected string\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"Jackson\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"{{bookingid}}\");\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -193,7 +193,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{rb_url}}/booking/1"
+				"url": "{{rb_url}}/booking/{{bookingid}}"
 			},
 			"response": []
 		},
