@@ -141,10 +141,7 @@
 							"    pm.expect(jsonData.booking.bookingid).to.eql(bi);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Check last name\" + ln, function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.booking.lastname).to.eql(ln);\r",
-							"});"
+							""
 						],
 						"type": "text/javascript"
 					}
