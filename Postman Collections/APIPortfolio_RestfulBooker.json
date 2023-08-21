@@ -135,14 +135,10 @@
 							"\r",
 							"var bi = pm.variables.get(\"bookingid\");\r",
 							"\r",
-							"pm.sendRequest(pm.environment.get(\"rb_url\") + \"/booking/\" + pm.variables.get(\"booking_id\")),\r",
-							"    function (err, res) {\r",
-							"        if (err) { \r",
-							"            console.log(err); \r",
-							"        }\r",
-							"\r",
-							"    };\r",
-							"\r",
+							"pm.test(\"Check bookingid\" + bi, function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.booking.bookingid).to.eql(bi);\r",
+							"});\r",
 							""
 						],
 						"type": "text/javascript"
