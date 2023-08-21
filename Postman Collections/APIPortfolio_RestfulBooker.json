@@ -136,7 +136,7 @@
 							"\r",
 							"var fn = pm.variables.get(\"firstname\");\r",
 							"\r",
-							"pm.test(\"Check first name\" + fn, function () {\r",
+							"pm.test(\"Check first name \" + fn, function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.booking.firstname).to.eql(fn);\r",
 							"});\r",
