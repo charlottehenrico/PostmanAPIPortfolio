@@ -186,6 +186,25 @@
 						],
 						"type": "text/javascript"
 					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "50a3cb81-4c80-491f-bad2-67b8c3d3f086",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var ln = pm.variables.get(\"lastname\");\r",
+							"\r",
+							"pm.test(\"Check last name \" + ln, function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.booking.lastname).to.eql(ln);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
 			],
 			"id": "74f2f1ca-53dd-4d8a-899e-3abb7cfa3ebe",
