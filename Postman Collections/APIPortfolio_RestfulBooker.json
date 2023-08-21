@@ -461,7 +461,22 @@
 						"value": "token=abc123"
 					}
 				],
-				"url": "{{rb_url}}/booking/{{booking_id}}"
+				"url": {
+					"raw": "{{rb_url}}/booking/?{{booking_id}}",
+					"host": [
+						"{{rb_url}}"
+					],
+					"path": [
+						"booking",
+						""
+					],
+					"query": [
+						{
+							"key": "{{booking_id}}",
+							"value": null
+						}
+					]
+				}
 			},
 			"response": []
 		}
