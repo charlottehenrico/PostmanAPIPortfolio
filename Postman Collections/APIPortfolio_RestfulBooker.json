@@ -178,7 +178,10 @@
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"pm.test(\"Surname matches expected string\", function () {\r",
+							"\r",
+							"pm.sendRequest(pm.environment.get(\"rb_url\") + \"/booking/\" + pm.variables.get(\"booking_id\")),\r",
+							"\r",
+							"pm.test(\"Booking id is expected id\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include(\"{{bookingid}}\")\r",
 							"});"
 						],
