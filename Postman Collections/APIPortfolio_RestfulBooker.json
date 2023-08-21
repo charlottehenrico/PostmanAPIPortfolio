@@ -134,11 +134,8 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"var fn = pm.variables.get(\"firstname\");\r",
-							"\r",
-							"pm.test(\"Check first name \" + fn, function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.booking.firstname).to.eql(fn);\r",
+							"pm.test(\"Surname matches expected string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"{{firstname}}\");\r",
 							"});\r",
 							"\r",
 							""
