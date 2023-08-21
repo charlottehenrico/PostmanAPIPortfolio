@@ -123,53 +123,6 @@
 			"response": []
 		},
 		{
-			"name": "Get Booking By Name_firstnameParameter",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "54a5e16c-7956-4253-b344-27e7ad099909",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Surname matches expected string\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"{{firstname}}\");\r",
-							"});\r",
-							"\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"id": "ff09bc2b-56d8-4cd5-bbf5-2cd3b6b23b11",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{rb_url}}/booking?firstname={{firstname}}",
-					"host": [
-						"{{rb_url}}"
-					],
-					"path": [
-						"booking"
-					],
-					"query": [
-						{
-							"key": "firstname",
-							"value": "{{firstname}}"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Get Booking By Name_lastnameParameter",
 			"event": [
 				{
