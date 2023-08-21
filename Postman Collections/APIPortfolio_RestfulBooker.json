@@ -215,7 +215,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{rb_url}}/booking?lastname=brown",
+					"raw": "{{rb_url}}/booking?lastname={{lastname}}",
 					"host": [
 						"{{rb_url}}"
 					],
@@ -225,7 +225,7 @@
 					"query": [
 						{
 							"key": "lastname",
-							"value": "brown"
+							"value": "{{lastname}}"
 						}
 					]
 				}
