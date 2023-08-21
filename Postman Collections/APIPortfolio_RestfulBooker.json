@@ -134,7 +134,14 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"//write test here to verify that the booking id that was created during the prerequest script ipresent"
+							"var fn = pm.variables.get(\"firstname\");\r",
+							"\r",
+							"pm.test(\"Check first name\" + fn, function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.booking.firstname).to.eql(fn);\r",
+							"});\r",
+							"\r",
+							""
 						],
 						"type": "text/javascript"
 					}
