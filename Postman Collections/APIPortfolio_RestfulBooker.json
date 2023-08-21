@@ -413,10 +413,10 @@
 							"  }\r",
 							"};\r",
 							"\r",
-							"pm.sendRequest(createBooking), function (err, response) {\r",
+							"pm.sendRequest(createBooking, function (err, res) {\r",
 							"pm.expect(err).is.null;\r",
-							"pm.variables.set(\"booking_id\", res.json().bookingid);\r",
-							"};"
+							"pm.variables.set(\"booking_id\", res.json().bookingid)\r",
+							"});"
 						],
 						"type": "text/javascript"
 					}
