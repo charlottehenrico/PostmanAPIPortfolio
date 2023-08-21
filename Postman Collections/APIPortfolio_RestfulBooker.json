@@ -123,66 +123,6 @@
 			"response": []
 		},
 		{
-			"name": "Get Booking By Name_lastnameParameter",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "54a5e16c-7956-4253-b344-27e7ad099909",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "50a3cb81-4c80-491f-bad2-67b8c3d3f086",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							"var ln = pm.variables.get(\"lastname\");\r",
-							"\r",
-							"pm.test(\"Check last name \" + ln, function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.booking.lastname).to.eql(ln);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"id": "74f2f1ca-53dd-4d8a-899e-3abb7cfa3ebe",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{rb_url}}/booking?lastname={{lastname}}",
-					"host": [
-						"{{rb_url}}"
-					],
-					"path": [
-						"booking"
-					],
-					"query": [
-						{
-							"key": "lastname",
-							"value": "{{lastname}}"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Get Bookings By Date Test",
 			"event": [
 				{
