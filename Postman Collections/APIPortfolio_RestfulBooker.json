@@ -187,6 +187,29 @@
 						],
 						"type": "text/javascript"
 					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "13f6a0dc-5a56-4a6e-a218-478735d034a9",
+						"exec": [
+							"const createBooking = {\r",
+							"  url: pm.environment.get(\"rb_url\") + \"/booking\",\r",
+							"  method: 'POST',\r",
+							"    header:'Content-Type:application/json',\r",
+							"  body: {\r",
+							"    mode: 'raw',\r",
+							"    raw: JSON.stringify(pm.variables.get(\"new_booking\"))\r",
+							"  }\r",
+							"};\r",
+							"\r",
+							"pm.sendRequest(createBooking, function (err, res) {\r",
+							"pm.expect(err).is.null;\r",
+							"pm.variables.set(\"booking_id\", res.json().bookingid)\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
 			],
 			"id": "aa5b31ca-1eb0-442e-b81c-362ec2b14bdb",
