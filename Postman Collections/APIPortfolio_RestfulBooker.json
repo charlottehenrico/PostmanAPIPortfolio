@@ -462,7 +462,7 @@
 					}
 				],
 				"url": {
-					"raw": "{{rb_url}}/booking/?{{booking_id}}",
+					"raw": "{{rb_url}}/booking/?bookingid={{booking_id}}",
 					"host": [
 						"{{rb_url}}"
 					],
@@ -472,8 +472,8 @@
 					],
 					"query": [
 						{
-							"key": "{{booking_id}}",
-							"value": null
+							"key": "bookingid",
+							"value": "{{booking_id}}"
 						}
 					]
 				}
