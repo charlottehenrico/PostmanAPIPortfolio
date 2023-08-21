@@ -91,7 +91,6 @@
 							"    pm.expect(pm.response.text()).to.include(\"bookingid\");\r",
 							"});\r",
 							"\r",
-							"\r",
 							"pm.test(\"Body contains booking id numbers\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.bookingid).to.not.be.null;\r",
