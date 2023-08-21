@@ -122,6 +122,69 @@
 			"response": []
 		},
 		{
+			"name": "Get Booking By ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b8df4420-fe2b-4e23-8067-b9d310cdc48e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var bi = pm.variables.get(\"bookingid\");\r",
+							"\r",
+							"\r",
+							"pm.test(\"Check booking id\" + bi, function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.booking.bookingid).to.eql(bi);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check last name\" + ln, function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.booking.lastname).to.eql(ln);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "13f6a0dc-5a56-4a6e-a218-478735d034a9",
+						"exec": [
+							"const createBooking = {\r",
+							"  url: pm.environment.get(\"rb_url\") + \"/booking\",\r",
+							"  method: 'POST',\r",
+							"    header:'Content-Type:application/json',\r",
+							"  body: {\r",
+							"    mode: 'raw',\r",
+							"    raw: JSON.stringify(pm.variables.get(\"new_booking\"))\r",
+							"  }\r",
+							"};\r",
+							"\r",
+							"pm.sendRequest(createBooking, function (err, res) {\r",
+							"pm.expect(err).is.null;\r",
+							"pm.variables.set(\"booking_id\", res.json().bookingid)\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "aa5b31ca-1eb0-442e-b81c-362ec2b14bdb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{rb_url}}/booking/{{bookingid}}"
+			},
+			"response": []
+		},
+		{
 			"name": "Get Bookings By Date Test",
 			"event": [
 				{
@@ -163,62 +226,6 @@
 						}
 					]
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Booking By ID",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "b8df4420-fe2b-4e23-8067-b9d310cdc48e",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							"pm.sendRequest(pm.environment.get(\"rb_url\") + \"/booking/\" + pm.variables.get(\"booking_id\")),\r",
-							"\r",
-							"pm.test(\"Booking id is expected id\", function () {\r",
-							"    pm.expect(pm.response.text()).to.equal(\"{{bookingid}}\")\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "13f6a0dc-5a56-4a6e-a218-478735d034a9",
-						"exec": [
-							"const createBooking = {\r",
-							"  url: pm.environment.get(\"rb_url\") + \"/booking\",\r",
-							"  method: 'POST',\r",
-							"    header:'Content-Type:application/json',\r",
-							"  body: {\r",
-							"    mode: 'raw',\r",
-							"    raw: JSON.stringify(pm.variables.get(\"new_booking\"))\r",
-							"  }\r",
-							"};\r",
-							"\r",
-							"pm.sendRequest(createBooking, function (err, res) {\r",
-							"pm.expect(err).is.null;\r",
-							"pm.variables.set(\"booking_id\", res.json().bookingid)\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"id": "aa5b31ca-1eb0-442e-b81c-362ec2b14bdb",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "{{rb_url}}/booking/{{bookingid}}"
 			},
 			"response": []
 		},
