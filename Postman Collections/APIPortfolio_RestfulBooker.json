@@ -182,7 +182,7 @@
 							"pm.sendRequest(pm.environment.get(\"rb_url\") + \"/booking/\" + pm.variables.get(\"booking_id\")),\r",
 							"\r",
 							"pm.test(\"Booking id is expected id\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"{{bookingid}}\")\r",
+							"    pm.expect(pm.response.text()).to.equal(\"{{bookingid}}\")\r",
 							"});"
 						],
 						"type": "text/javascript"
