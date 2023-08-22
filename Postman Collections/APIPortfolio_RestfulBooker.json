@@ -204,6 +204,19 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var ci = (pm.variables.get(\"checkin\"));\r",
+							"var co = (pm.variables.get(\"checkout\"));\r",
+							"\r",
+							"pm.test(\"Check checkin date \" + ci, function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.booking.bookingdates.checkin).to.eql(ci);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check checkout date \" + ci, function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.booking.bookingdates.checkout).to.eql(co);\r",
 							"});"
 						],
 						"type": "text/javascript"
