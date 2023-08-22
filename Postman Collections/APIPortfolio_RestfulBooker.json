@@ -195,7 +195,7 @@
 			"response": []
 		},
 		{
-			"name": "Get Bookings By Date Test",
+			"name": "Get Bookings By Dates",
 			"event": [
 				{
 					"listen": "test",
