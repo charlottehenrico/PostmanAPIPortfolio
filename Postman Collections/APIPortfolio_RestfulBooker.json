@@ -227,7 +227,7 @@
 							"pm.sendRequest(createBooking, function (err, res) {\r",
 							"pm.expect(err).is.null;\r",
 							"pm.variables.set(\"checkin\", res.json().booking.bookingdates.checkin)\r",
-							"pm.variables.set(\"checkout\", res.josn().booking.bookingdates.checkout)\r",
+							"pm.variables.set(\"checkout\", res.jsonn().booking.bookingdates.checkout)\r",
 							"});"
 						],
 						"type": "text/javascript"
