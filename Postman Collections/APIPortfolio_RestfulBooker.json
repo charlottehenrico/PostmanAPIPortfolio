@@ -176,12 +176,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{rb_url}}/booking?bookingid={{booking_id}}",
+					"raw": "{{rb_url}}/booking/?bookingid={{booking_id}}",
 					"host": [
 						"{{rb_url}}"
 					],
 					"path": [
-						"booking"
+						"booking",
+						""
 					],
 					"query": [
 						{
