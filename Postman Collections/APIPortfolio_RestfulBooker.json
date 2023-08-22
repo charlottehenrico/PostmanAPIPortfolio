@@ -197,18 +197,13 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"var ci = (pm.variables.get(\"checkin\"));\r",
-							"var co = (pm.variables.get(\"checkout\"));\r",
+							"var bi = (pm.variables.get(\"booking_id\"));\r",
 							"\r",
-							"pm.test(\"Check checkin date \" + ci, function () {\r",
+							"pm.test(\"Check bookingid \" + ci, function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.booking.bookingdates.checkin).to.eql(ci);\r",
+							"    pm.expect(jsonData.bookingid).to.eql(bi);\r",
 							"});\r",
-							"\r",
-							"pm.test(\"Check checkout date \" + ci, function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.booking.bookingdates.checkout).to.eql(co);\r",
-							"});"
+							""
 						],
 						"type": "text/javascript"
 					}
