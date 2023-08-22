@@ -208,6 +208,30 @@
 						],
 						"type": "text/javascript"
 					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2d492038-a55d-4ece-b7bb-f3d3aa1cc70f",
+						"exec": [
+							"const createBooking = {\r",
+							"  url: pm.environment.get(\"rb_url\") + \"/booking\",\r",
+							"  method: 'POST',\r",
+							"    header:'Content-Type:application/json',\r",
+							"  body: {\r",
+							"    mode: 'raw',\r",
+							"    raw: JSON.stringify(pm.variables.get(\"new_booking\"))\r",
+							"  }\r",
+							"};\r",
+							"\r",
+							"pm.sendRequest(createBooking, function (err, res) {\r",
+							"pm.expect(err).is.null;\r",
+							"pm.variables.set(\"checkin\", res.json().booking.bookingdates.checkin)\r",
+							"pm.variables.set(\"checkout\", res.josn().booking.bookingdates.checkout)\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
 			],
 			"id": "a606e74a-f2f2-4ba9-b2bd-fbd789c03053",
@@ -218,7 +242,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{rb_url}}/booking?checkin=2014-03-15&checkout=2014-05-21",
+					"raw": "{{rb_url}}/booking?checkin={{checkin}}&checkout={{checkout}}",
 					"host": [
 						"{{rb_url}}"
 					],
@@ -228,11 +252,11 @@
 					"query": [
 						{
 							"key": "checkin",
-							"value": "2014-03-15"
+							"value": "{{checkin}}"
 						},
 						{
 							"key": "checkout",
-							"value": "2014-05-21"
+							"value": "{{checkout}}"
 						}
 					]
 				}
