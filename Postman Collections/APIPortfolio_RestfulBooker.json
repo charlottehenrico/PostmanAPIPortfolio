@@ -199,7 +199,7 @@
 							"\r",
 							"var bi = (pm.variables.get(\"booking_id\"));\r",
 							"\r",
-							"pm.test(\"Check bookingid \" + ci, function () {\r",
+							"pm.test(\"Check bookingid \" + bi, function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.bookingid).to.eql(bi);\r",
 							"});\r",
