@@ -135,7 +135,7 @@
 							"\r",
 							"var bifn = (pm.variables.get(\"firstname\"));\r",
 							"\r",
-							"pm.test(\"Check bookingid firstname\" + bifn, function () {\r",
+							"pm.test(\"Check bookingid firstname: \" + bifn, function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.firstname).to.eql(bifn);\r",
 							"});\r",
