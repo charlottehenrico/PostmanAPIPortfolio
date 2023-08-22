@@ -133,7 +133,7 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"var bi = pm.variables.get(\"booking_id\");\r",
+							"var bi = pm.variables.get(\"bookingid\");\r",
 							"\r",
 							"pm.test(\"Check bookingid\" + bi, function () {\r",
 							"    var jsonData = pm.response.json();\r",
