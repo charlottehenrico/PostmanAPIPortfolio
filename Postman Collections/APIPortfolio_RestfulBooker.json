@@ -137,9 +137,12 @@
 							"\r",
 							"pm.test(\"Check bookingid \" + bi, function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.bookingid).to.eq(bi);\r",
+							"    pm.expect(jsonData.bookingid).to.include(bi);\r",
 							"});\r",
-							""
+							"// pm.test(\"Your test name\", function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData.value).to.eql(100);\r",
+							"// });"
 						],
 						"type": "text/javascript"
 					}
