@@ -137,7 +137,7 @@
 							"\r",
 							"pm.test(\"Check bookingid \" + bi, function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.booking.bookingid).to.eql(bi);\r",
+							"    pm.expect(jsonData.bookingid).to.eql(bi);\r",
 							"});\r",
 							""
 						],
