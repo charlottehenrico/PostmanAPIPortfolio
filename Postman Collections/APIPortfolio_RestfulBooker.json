@@ -458,7 +458,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "0bf7f83b-57f7-4aec-8f5f-8625ee93cfa0",
+				"id": "f42c9131-d16a-490a-a619-17358b47f8d3",
 				"type": "text/javascript",
 				"exec": [
 					"var firstNames=[\"Astrid\",\"Bryce\",\"Celia\", \"Danny\",\"Eric\", \"Freya\", \"Greg\", \"Helga\", \"Indy\", \"Josh\", \"Kaylin\"];",
@@ -475,10 +475,10 @@
 					"",
 					"//use the moment module with dates and date formatting",
 					"const moment= require(\"moment\");",
-					"var checkin = moment().add( \"days\", _.random(1, 180));",
+					"var checkin = moment().add( \"days\", _.random(1, 49));",
 					"pm.variables.set(\"checkin\", checkin.format(\"YYYY-MM-DD\"));",
 					"",
-					"var checkout = moment().add( \"days\", _.random(1, 14));",
+					"var checkout = moment().add( \"days\", _.random(50, 100));",
 					"pm.variables.set(\"checkout\", checkout.format(\"YYYY-MM-DD\"));",
 					"",
 					"var needs = [\"breakfast\", \"lunch \", \"late checkin\", \"early checkout\", null];",
@@ -503,7 +503,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "11b6cc04-e287-4d1c-98a1-93de1fe70160",
+				"id": "ca7970ac-40f0-4760-9c4b-8b123259e9b4",
 				"type": "text/javascript",
 				"exec": [
 					""
