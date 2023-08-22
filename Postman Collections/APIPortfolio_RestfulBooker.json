@@ -175,21 +175,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "{{rb_url}}/booking?bookingid={{booking_id}}",
-					"host": [
-						"{{rb_url}}"
-					],
-					"path": [
-						"booking"
-					],
-					"query": [
-						{
-							"key": "bookingid",
-							"value": "{{booking_id}}"
-						}
-					]
-				}
+				"url": "{{rb_url}}/booking/{{booking_id}}"
 			},
 			"response": []
 		},
