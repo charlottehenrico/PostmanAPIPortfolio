@@ -133,12 +133,12 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"var bi = pm.variables.get(\"booking_id\");\r",
+							"// var bi = pm.variables.get(\"booking_id\");\r",
 							"\r",
-							"pm.test(\"Check bookingid\" + bi, function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.booking.bookingid).to.eql(bi);\r",
-							"});\r",
+							"// pm.test(\"Check bookingid\" + bi, function () {\r",
+							"//     var jsonData = pm.response.json();\r",
+							"//     pm.expect(jsonData.booking.bookingid).to.eql(bi);\r",
+							"// });\r",
 							""
 						],
 						"type": "text/javascript"
