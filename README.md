@@ -20,7 +20,8 @@ The Collection contains:
 8. External Data set to be used for running one of the calls with the external data set.
 9. Using lodash module to get random numbers
 10. Using moment module to format dates
-11. Creating an object on collection level that is used in other requests 
+11. Creating an object on collection level that is used in other requests
+12. Mock server and response setup for the auth request
 
 
 
