@@ -71,7 +71,31 @@
 				},
 				"url": "{{rb_url}}/auth"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "20671f44-93e9-4d06-98e1-ca6736e5a550",
+					"name": "Auth",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"password123\"\n}"
+						},
+						"url": "{{rb_url}}/auth"
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Get All Bookings",
