@@ -22,6 +22,7 @@ The Collection contains:
 10. Using moment module to format dates
 11. Creating an object on collection level that is used in other requests
 12. Mock server and response setup for the auth request
+13. Monitor is setup. Remember to set your own user email to receive the monitor results. Postman allows for 1000 monitor results per month.
 
 
 
