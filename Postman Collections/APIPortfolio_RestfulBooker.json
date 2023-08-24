@@ -89,11 +89,21 @@
 						},
 						"url": "{{rb_url}}/auth"
 					},
-					"_postman_previewlanguage": null,
-					"header": null,
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
 					"cookie": [],
 					"responseTime": null,
-					"body": null
+					"body": "{\r\n    \"token\": \"2bec9b58034b82c\"\r\n}"
 				}
 			]
 		},
