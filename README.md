@@ -14,7 +14,7 @@ The Collection contains:
 2. An auth token used on all calls by setting them to "inherit from parent
 3. Tests to check status codes
 4. Tests to check json values that match
-5. Tests that check response times
+5. Test that checks response time - performance testing
 6. Pre-request scripts on individual request level
 7. Sending requests inside another request as part of pre-request script
 8. External Data set to be used for running one of the calls with the external data set.
