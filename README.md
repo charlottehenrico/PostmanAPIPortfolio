@@ -46,9 +46,9 @@ Mock Server Setup – Simulating authentication responses.
 
 **Running Tests with Newman (CLI)**
 To execute API tests via the command line:   
-newman run collections/RestfulBooker.json -e environments/dev_environment.json  
+newman run pathtoyourcollectionjson\APIPortfolio_RestfulBooker.postman_collection.json" -e "pathtoyourenvironmentjson\Local.postman_environment.json"
 For HTML Reports, run:  
-newman run collections/RestfulBooker.json -e environments/dev_environment.json -r html --reporter-html-export reports/test-report.html
+newman run pathtoyourcollectionjson\APIPortfolio_RestfulBooker.postman_collection.json -e pathtoyourenvironmentjson\Local.postman_environment.json -r html --reporter-html-export reports/test-report.html
 
 **CI/CD Integration**
 This project can be integrated into GitHub Actions or Jenkins for automated test execution. You can set up scheduled or trigger-based API testing pipelines.
